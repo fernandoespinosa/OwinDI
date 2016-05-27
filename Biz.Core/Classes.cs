@@ -8,11 +8,12 @@ namespace Biz.Core
         {
             Service1 = service1;
             Service2 = service2;
+            Guid = Guid.NewGuid();
         }
 
         public Service1 Service1 { get; private set; }
-
         public Service2 Service2 { get; private set; }
+        public Guid Guid { get; private set; }
     }
 
     public class Service2
@@ -20,9 +21,11 @@ namespace Biz.Core
         public Service2(Underyling underyling)
         {
             Underyling = underyling;
+            Guid = Guid.NewGuid();
         }
 
         public Underyling Underyling { get; private set; }
+        public Guid Guid { get; private set; }
     }
 
     public class Service1
@@ -30,9 +33,11 @@ namespace Biz.Core
         public Service1(Underyling underyling)
         {
             Underyling = underyling;
+            Guid = Guid.NewGuid();
         }
 
         public Underyling Underyling { get; private set; }
+        public Guid Guid { get; private set; }
     }
 
     public class Underyling

@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Biz.Core;
 
-namespace Host.Fiasco
+namespace Host.Perfection
 {
     internal class CompositionRoot
     {

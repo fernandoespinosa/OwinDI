@@ -1,18 +1,20 @@
 ﻿using Autofac;
+using Autofac.Integration.Owin;
 using Biz.Core;
 using Owin;
 using System.Text;
 
-namespace Host.Fiasco
+namespace Host.Perfection
 {
     public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
             var container = CompositionRoot.Build();
+            app.UseAutofacMiddleware(container); // perfection
             app.Run(async context =>
             {
-                var top = container.Resolve<Top>(); // fiasco
+                var top = context.GetAutofacLifetimeScope().Resolve<Top>(); // perfection
                 context.Response.ContentType = "text/plain";
 
                 var text = new StringBuilder();
